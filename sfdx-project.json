@@ -9,7 +9,7 @@
         },
         {
             "path": "force-app/main",
-            "default": true
+            "default": false
         }
     ],
     "namespace": "",
