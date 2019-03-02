@@ -6,6 +6,10 @@
             "package": "GIFter",
             "versionName": "Summer '18 (new color)",
             "versionNumber": "1.1.0.NEXT"
+        },
+        {
+            "path": "force-app/main",
+            "default": true
         }
     ],
     "namespace": "",
