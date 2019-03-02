@@ -1,14 +1,14 @@
 {
     "packageDirectories": [
         {
-            "path": "force-app/addon",
+            "path": "force-app/main",
             "default": true,
             "package": "GIFter",
             "versionName": "Summer '18 (new color)",
             "versionNumber": "1.1.0.NEXT"
         },
         {
-            "path": "force-app/main",
+            "path": "force-app/test",
             "default": false
         }
     ],
@@ -17,6 +17,7 @@
     "sourceApiVersion": "43.0",
     "packageAliases": {
         "GIFter": "0Ho7F000000Kyw0SAC",
-        "GIFter@1.1.0-2": "04t7F000005Z9EpQAK"
+        "GIFter@1.1.0-2": "04t7F000005Z9EpQAK",
+        "GIFter@1.1.0-3": "04t7F000005Z9EuQAK"
     }
 }
