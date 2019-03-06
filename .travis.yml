@@ -20,13 +20,18 @@ before_install:
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a DevHub
 script:
+# 1. test with scratch org
 - sfdx force:org:create -v DevHub -s -f config/project-scratch-def.json -a ciorg --wait 3
 - sfdx force:org:display -u ciorg
 - sfdx force:source:push -u ciorg
 - sfdx force:apex:test:run -u ciorg --wait 10
 - sfdx force:org:delete -u ciorg -p
 
-- sfdx force:package:version:create -p GIFter -d force-app/main -k test1234 --wait 10 -v DevHub
+# 2. create package version
+#- sfdx force:package:version:create -p GIFter -d force-app/main -k test1234 --wait 10 -v DevHub
 
+# 3. deploy to production org
 - sfdx force:package:install -u MyProduction --wait 10 --package GIFter@1.1.0-3 -k test1234 --noprompt
-- sfdx force:user:permset:assign -n GIFter -u MyProduction
+#- sfdx force:user:permset:assign -n GIFter -u MyProduction
+#- sfdx force:org:open -p lightning/n/GIFter -u MyProduction
+
